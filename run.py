@@ -42,7 +42,7 @@ async def sendNotiTest(time: str):
 
 # Async-Schedule here is working every 5 seconds fo async-engine.
 async def scheduler():
-    aioschedule.every(30).seconds.do(sendNoti)
+    aioschedule.every(3).seconds.do(sendNoti)
 
     while True:
         await aioschedule.run_pending()
