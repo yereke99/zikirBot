@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install dependencies
-RUN pip install --no-cache-dir aiogram==2.16 aioschedule
+RUN pip install --no-cache-dir aiogram==2.16 aioschedule pytz
 
 # Expose the port the app runs on
 EXPOSE 8080

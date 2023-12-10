@@ -4,6 +4,7 @@ import aioschedule
 import asyncio
 from database import Database
 from datetime import datetime
+import pytz
 
 
 db = Database()
@@ -22,7 +23,8 @@ async def sendToTelegram(data):
     
 
 async def sendNoti():
-    current_time = datetime.now()
+    desired_timezone = 'Asia/Almaty'
+    current_time = datetime.now(pytz.timezone(desired_timezone))
     formatted_data = current_time.strftime("%H:%M")
     print(formatted_data)
     data = db.Fetch(formatted_data)
