@@ -12,7 +12,7 @@ db = Database()
 async def sendToTelegram(data):
 
     for item in data:
-        message = f"""**{item[1]}**"""
+        message = f"""*{item[1]}*"""
         print(f"Sending to Telegram Channel: {message}")
 
         await bot.send_message(
@@ -44,7 +44,7 @@ async def sendNotiTest(time: str):
 
 # Async-Schedule here is working every 5 seconds fo async-engine.
 async def scheduler():
-    aioschedule.every(30).seconds.do(sendNoti)
+    aioschedule.every(40).seconds.do(sendNoti)
 
     while True:
         await aioschedule.run_pending()
