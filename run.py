@@ -12,7 +12,7 @@ db = Database()
 async def sendToTelegram(data):
 
     for item in data:
-        message = f"""**{item[0]}**"""
+        message = f"""**{item[1]}**"""
         print(f"Sending to Telegram Channel: {message}")
 
         await bot.send_message(
